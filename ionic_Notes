@@ -1,0 +1,17 @@
+1.Upload Download Files:
+Main Plugin : ionic cordova plugin add cordova-plugin-file-transfer
+compination file to our app and  specify location : ionic cordova plugin add cordova-plugin-file 
+to open pdf file : ionic cordova plugin add cordova-plugin-document-viewer
+
+
+then install packages :
+
+npm install --save @ionic-native/file-transfer  @ionic-native/document-viewer  @ionic
+-native/file
+
+https://www.youtube.com/watch?v=kM4cCQn8Bz4
+
+https://ionicframework.com/docs/native/file-transfer/
+
+
+************************************************************************************************************************
