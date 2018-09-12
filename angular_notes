@@ -1,1 +1,196 @@
 
+0_1---
+
+PWA:
+https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
+
+https://ionicframework.com/pwa
+
+
+pwa examples :
+https://www.progressivewebapproom.com/
+
+
+Service Worker:
+
+0_1.service worker angular 6 (Documentation):
+https://angular.io/guide/service-worker-intro
+
+
+0_2.service worker angular 6 :
+https://blog.angulartraining.com/how-to-go-offline-with-angular-service-worker-a3cc5dabc4d5
+or
+https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular
+
+
+
+0_3.service worker (native js):
+
+https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker-slides
+
+******************************************************************************************
+disable parameters:
+https://stackoverflow.com/questions/46377565/angular-4-router-how-to-not-display-parameters-in-the-url-bar
+
+
+get them from the another component:
+https://stackoverflow.com/questions/40275862/how-to-get-parameter-on-angular2-route-in-angular-way
+********************************************************************************************
+Send Parameters between components using services : 
+https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
+********************************************************************************************
+0_2---
+Material Design : 
+https://material.angular.io/components/categories
+********************************************************************************************
+0_3--- Print Document :
+  printDocument(){
+     let printBtn=document.getElementById("clickBtn");
+     printBtn.style.visibility='hidden';
+     window.print();
+     printBtn.style.visibility='visible';
+
+     return false;//to prevent refresh the page 
+  }
+***********************************************************************************************.
+0_4. Incorrect JS paths when ng build -prod is deployed in a subfolder #1080
+
+
+https://github.com/angular/angular-cli/issues/1080
+
+************************************************************************************************
+1.Course :
+https://angular.io/guide/quickstart
+https://codecraft.tv/courses/angular/ ,, 
+Angular 5 : https://codecraft.tv/courses/angular/quickstart/overview/ 
+
+
+***************************************************************************************************
+2.Cheat sheet : https://angular.io/guide/cheatsheet 
+
+***************************************************************************************************
+3.Get Unique Values from Array :
+https://stackoverflow.com/questions/15125920/how-to-get-distinct-values-from-an-array-of-objects-in-javascript 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set 
+
+***************************************************************************************************
+4.Using filter to filter data in array : 
+
+https://stackoverflow.com/questions/16037049/why-does-javascript-map-function-return-undefined  
+***************************************************************************************************
+
+5.Bootstrap : 
+https://getbootstrap.com/docs/4.0/layout/grid/ 
+
+***************************************************************************************************
+
+6.Two way binding radio buttons with angular6:
+https://dzone.com/articles/data-bind-radio-button-lists-with-angular-2 
+
+https://dzone.com/articles/data-bind-radio-button-lists-with-angular-2 
+
+Send value from parent to child and from child to parent (Two way binding): 
+<my-cmp [(title)]="name"> ==  <my-cmp [title]="name" (titleChange)="name=$event">
+Sets up two-way data binding. Equivalent to: <my-cmp [title]="name" (titleChange)="name=$event">
+
+7.Get Url parameters:
+https://stackoverflow.com/questions/47455734/how-get-query-parameters-from-url-in-angular-5?rq=1 
+***************************************************************************************************
+
+
+8.Encode,Decode string js :
+https://www.w3schools.com/jsref/met_win_atob.asp 
+
+
+***************************************************************************************************
+
+9.*ngIf multiple values :
+https://stackoverflow.com/questions/36722605/angular-2-ngif-statement-with-multiple-values 
+
+***************************************************************************************************
+
+
+10.Leazy loading : 
+https://malcoded.com/posts/angular-fundamentals-modules 
+***************************************************************************************************
+
+
+11.checkBox:
+ https://stackoverflow.com/questions/34997128/angular-2-get-values-of-multiple-checked-checkboxes 
+***************************************************************************************************
+
+
+12.What’s new  in Angular: https://alligator.io/angular/angular-5/ 
+Ex: https://stackblitz.com/edit/angular-1lrkza?file=app%2Fapp.component.ts 
+Lettable(pipeable) Operators : https://github.com/ReactiveX/rxjs/blob/master/doc/pipeable-operators.md 
+
+13.tryService : https://reqres.in/  
+
+***************************************************************************************************
+14.Angular UI Automated Testing :
+
+https://trailheadtechnology.com/ui-automation-testing-of-angul
+ar-apps-using-protractor-jasmine/   
+
+وده فيديو شرح
+https://www.youtube.com/watch?v=LCSwmJwRU1U 
+**************************************************************************************************
+
+15. Smart table:
+
+ https://appdividend.com/2018/05/13/angular-6-smart-table-example/
+ 
+ Doc:
+ https://akveo.github.io/ng2-smart-table/#/documentation
+ 
+
+ there is 2 error  can face any one  who will read this article  in angular 6 :
+
+ you  may facing error with ng2-completer  > install it via
+ npm cache clean --force
+ npm i ng2-completer --save
+ 
+ for css :
+ :host /deep/ ng2-smart-table thead > tr > th   { 
+    border: 1px solid gray;
+}
+
+
+:host /deep/ ng2-smart-table td  { 
+    border: 1px solid gray;
+}
+
+check :
+https://stackoverflow.com/questions/45893206/how-to-add-custom-css-in-ng2-smart-table
+
+https://rahulrsingh09.github.io/AngularConcepts/host
+
+**************************************************************************************************
+
+16. alias for import statement angular6
+https://stackoverflow.com/questions/48733489/how-can-i-configure-angular-5-to-support-module-aliases
+
+**************************************************************************************************
+
+17.Using Crypto JS to encrypt localStorage
+
+Install & Example :https://github.com/brix/crypto-js
+
+Example : https://sirsaula.wordpress.com/2017/08/02/ionic-angular-2-aes-encryption/
+***************************************************************************************************
+Node Sass problem solving :
+sudo npm config set unsafe-perm=true
+sudo npm rebuild node-sass --force
+sudo npm install
+***************************************************************************************************
+
+
+
+
+
+
+
+
+
+
