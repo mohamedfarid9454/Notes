@@ -1,0 +1,180 @@
+
+  downloadImg(Name) {
+    let templatePath;
+    let path = "";
+    if (this.platform.is("ios") || this.platform.is("ipad")) {
+      path = this.file.documentsDirectory; //|| this.file.externalDataDirectory || this.file.dataDirectory || this.file.externalCacheDirectory || this.file.externalApplicationStorageDirectory ||this.file.externalRootDirectory;
+      console.log("path ios:" + path);
+    } else {
+      path = this.file.dataDirectory;
+    }
+    let transfer: FileTransferObject = this.fileTransfer.create();
+    let url =
+      "https://images.pexels.com/photos/861443/pexels-photo-861443.jpeg";
+
+    let uri = encodeURI(url);
+    templatePath = path + Name + ".jpeg";
+    console.log("templatePath :");
+    console.log(templatePath);
+
+    transfer
+      .download(uri, templatePath, true)
+      .then(
+        entry => {
+          let URL = entry.toURL();
+          this.imgUrl = this.file.dataDirectory + Name + ".jpeg"; //entry.toURL();
+
+          let alert = this.alertController.create({
+            title: "image uploaded successfully",
+            message: URL,
+            buttons: ["OK"]
+          });
+          alert.present();
+        },
+        error => {
+          console.log(error);
+
+          let alert2 = this.alertController.create({
+            title: "image uploaded failed",
+            message: JSON.stringify(error),
+            buttons: ["OK"]
+          });
+          alert2.present();
+        }
+      )
+      .catch(err => {
+        console.log(err);
+        let alert3 = this.alertController.create({
+          title: "image uploaded failed(catch error)",
+          message: JSON.stringify(err),
+          buttons: ["OK"]
+        });
+        alert3.present();
+      });
+
+    this.checkFile(templatePath);
+  }
+
+  downloadPdf(Name) {
+    let templatePath;
+    let path = "";
+    if (this.platform.is("ios") || this.platform.is("ipad")) {
+      path = this.file.documentsDirectory; //|| this.file.externalDataDirectory || this.file.dataDirectory || this.file.externalCacheDirectory || this.file.externalApplicationStorageDirectory ||this.file.externalRootDirectory;
+      console.log("path ios:" + path);
+    } else {
+      path = this.file.dataDirectory;
+    }
+    let transfer: FileTransferObject = this.fileTransfer.create();
+    let url = "https://www.tutorialspoint.com/css/css_tutorial.pdf";
+
+    let uri = encodeURI(url);
+    templatePath = path +'direct1/'+ Name + ".pdf";
+    console.log("templatePath :");
+    console.log(templatePath);
+   
+    transfer
+      .download(uri, templatePath, true)
+      .then(
+        entry => {
+          let URL = entry.toURL();
+          this.pdfUrl = entry.toURL();
+          let alert = this.alertController.create({
+            title: "pdf uploaded successfully",
+            message: URL,
+            buttons: ["OK"]
+          });
+          alert.present();
+        },
+        error => {
+          console.log(error);
+
+          let alert2 = this.alertController.create({
+            title: "pdf uploaded failed",
+            message: JSON.stringify(error),
+            buttons: ["OK"]
+          });
+          alert2.present();
+        }
+      )
+      .catch(err => {
+        console.log(err);
+        let alert3 = this.alertController.create({
+          title: "pdf uploaded failed(catch error)",
+          message: JSON.stringify(err),
+          buttons: ["OK"]
+        });
+        alert3.present();
+      });
+
+      transfer
+      .download(uri, templatePath, true);
+      templatePath = path +'direct1/direct2/'+ "new_" + ".pdf";
+
+      transfer
+      .download(uri, templatePath, true);
+    this.checkFile(templatePath);
+  }
+  checkFile(path) {
+    this.file
+      .checkFile(this.file.dataDirectory, path)
+      .then(() => {
+        // exist.
+        console.log("exist!!!"); // I always enter here
+      })
+      .catch(err => {
+        // try again
+        console.log("ERR  check file: ");
+        console.log(err);
+      });
+  }
+  OpenImg() {
+    console.log('imgUrl:');
+   console.log(this.imgUrl);
+
+    const options: DocumentViewerOptions = {
+      title: "My PDF"
+    };
+   // this.imgUrl="https://images.pexels.com/photos/861443/pexels-photo-861443.jpeg";
+
+    this.dv.viewDocument(
+      this.imgUrl,
+      "image",
+      options,
+      () => {},
+      () => {},
+      () => {},
+      error => {
+        console.log(error);
+        let alert3 = this.alertController.create({
+          title: "OpenImg Error:",
+          message: JSON.stringify(error),
+          buttons: ["OK"]
+        });
+        alert3.present();
+      }
+    );
+  }
+
+  Openpdf() {
+    console.log(this.imgUrl);
+    const options: DocumentViewerOptions = {
+      title: "My PDF"
+    };
+    this.dv.viewDocument(
+      this.pdfUrl,
+      "application/pdf",
+      options,
+      () => {},
+      () => {},
+      () => {},
+      error => {
+        console.log(error);
+        let alert3 = this.alertController.create({
+          title: "Openpdf Error:",
+          message: JSON.stringify(error),
+          buttons: ["OK"]
+        });
+        alert3.present();
+      }
+    );
+  }
