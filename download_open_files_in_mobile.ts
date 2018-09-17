@@ -81,6 +81,11 @@ export class DownloadPage {
 
               issue solution link :
               https://github.com/ionic-team/ionic-cli/issues/2685
+              
+              //it worked with other without using normalizeURL() but using this link :
+              // by adding <allow-navigation href="file:///*" /> in config.xml
+              //https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist/     
+              
               */ 
               
           this.imgUrl = normalizeURL( entry.toURL());
