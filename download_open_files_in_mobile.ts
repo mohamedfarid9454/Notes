@@ -216,3 +216,16 @@ export class DownloadPage {
   }
   
   }
+
+
+    /*console.log("location.href:");
+    console.log(location.href);//http://localhost:8080/index.html#/login
+    console.log(this.file.dataDirectory);//file:///Users/eyedevelopers/Library/Developer/CoreSimulator/Devices/1CD9BF48-CA54-4939-BD44-5E2050FF3DA2/data/Containers/Data/Application/1EA7BB0B-DAB1-49BF-A147-75B8A7E565F3/Library/NoCloud/
+    console.log(this.file.documentsDirectory);//file:///Users/eyedevelopers/Library/Developer/CoreSimulator/Devices/1CD9BF48-CA54-4939-BD44-5E2050FF3DA2/data/Containers/Data/Application/1EA7BB0B-DAB1-49BF-A147-75B8A7E565F3/Documents/
+    console.log(this.file.externalApplicationStorageDirectory);//null
+    console.log(this.file.externalCacheDirectory);//null
+    console.log(this.file.externalDataDirectory);//null
+    console.log(this.file.externalRootDirectory);//null
+    console.log(this.file.applicationDirectory);//file:///Users/eyedevelopers/Library/Developer/CoreSimulator/Devices/1CD9BF48-CA54-4939-BD44-5E2050FF3DA2/data/Containers/Bundle/Application/06F81FB5-9FFF-42A6-A373-D5E5BE4CD41C/NBPTouch.app/
+    console.log(this.file.applicationStorageDirectory);//file:///Users/eyedevelopers/Library/Developer/CoreSimulator/Devices/1CD9BF48-CA54-4939-BD44-5E2050FF3DA2/data/Containers/Data/Application/3B7B4B02-B11F-42A1-89C4-1DE609CF9F3E/
+  */
