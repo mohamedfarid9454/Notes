@@ -1,19 +1,65 @@
+/*
+Main Plugin : ionic cordova plugin add cordova-plugin-file-transfer
+compination file to our app and  specify location : ionic cordova plugin add cordova-plugin-file 
+to open pdf file : ionic cordova plugin add cordova-plugin-document-viewer
 
-  downloadImg(Name) {
+
+then install packages :
+
+npm install --save @ionic-native/file-transfer  @ionic-native/document-viewer  @ionic
+-native/file
+*/
+/************************************ Example  ***********************************/
+
+
+
+import { Component } from "@angular/core";
+import {IonicPage,NavController,NavParams,Platform, normalizeURL,AlertController} from "ionic-angular";
+import { FileTransfer, FileTransferObject } from "@ionic-native/file-transfer";
+import { File } from "@ionic-native/file";
+import {DocumentViewer, DocumentViewerOptions} from "@ionic-native/document-viewer";
+
+@IonicPage()
+@Component({
+  selector: "page-download",
+  templateUrl: "download.html",
+  styles: []
+
+  //styleUrls:['./login.css']
+})
+export class DownloadPage {
+  imgUrl: string = "";
+  imgUrl2: string = "";
+
+  pdfUrl: string = "";
+  errorMessage: string;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public dv: DocumentViewer,
+    public platform: Platform,
+    public fileTransfer: FileTransfer,
+    public file: File,
+    public alertController: AlertController
+  ) {}
+  
+  
+ downloadImg(Name) {
     let templatePath;
     let path = "";
     if (this.platform.is("ios") || this.platform.is("ipad")) {
-      path = this.file.documentsDirectory; //|| this.file.externalDataDirectory || this.file.dataDirectory || this.file.externalCacheDirectory || this.file.externalApplicationStorageDirectory ||this.file.externalRootDirectory;
+      path = this.file.documentsDirectory; //|| this.file.externalDataDirectory || this.file.dataDirectory ||   this.file.externalCacheDirectory || this.file.externalApplicationStorageDirectory ||this.file.externalRootDirectory;
       console.log("path ios:" + path);
     } else {
       path = this.file.dataDirectory;
     }
     let transfer: FileTransferObject = this.fileTransfer.create();
     let url =
-      "https://images.pexels.com/photos/861443/pexels-photo-861443.jpeg";
+      "https://cdn.pixabay.com/photo/2016/02/14/13/48/computer-1199488_960_720.png";
 
     let uri = encodeURI(url);
-    templatePath = path + Name + ".jpeg";
+    templatePath = path  +'direct1/'+Name+ ".png";
     console.log("templatePath :");
     console.log(templatePath);
 
@@ -21,12 +67,27 @@
       .download(uri, templatePath, true)
       .then(
         entry => {
-          let URL = entry.toURL();
-          this.imgUrl = this.file.dataDirectory + Name + ".jpeg"; //entry.toURL();
+            /*
+              https://beta.ionicframework.com/docs/building/webview/
+              https://ionicframework.com/docs/wkwebview/#rewriting-file
+              
+              We added built-in function (Ionic 3.2.0) that will rewrite file:// URLs automatically:
+
+              file:///usr/home/dev/app/index.html
+              Should be rewritten to:
+              /usr/home/dev/app/index.html
+
+              and normalizeURL(path) will do it 
+
+              issue solution link :
+              https://github.com/ionic-team/ionic-cli/issues/2685
+              */ 
+              
+          this.imgUrl = normalizeURL( entry.toURL());
 
           let alert = this.alertController.create({
             title: "image uploaded successfully",
-            message: URL,
+            message: this.imgUrl,
             buttons: ["OK"]
           });
           alert.present();
@@ -105,18 +166,15 @@
         });
         alert3.present();
       });
-
       transfer
       .download(uri, templatePath, true);
       templatePath = path +'direct1/direct2/'+ "new_" + ".pdf";
-
-      transfer
-      .download(uri, templatePath, true);
     this.checkFile(templatePath);
   }
+
   checkFile(path) {
     this.file
-      .checkFile(this.file.dataDirectory, path)
+      .checkFile(this.file.documentsDirectory, path)
       .then(() => {
         // exist.
         console.log("exist!!!"); // I always enter here
@@ -127,36 +185,9 @@
         console.log(err);
       });
   }
-  OpenImg() {
-    console.log('imgUrl:');
-   console.log(this.imgUrl);
 
-    const options: DocumentViewerOptions = {
-      title: "My PDF"
-    };
-   // this.imgUrl="https://images.pexels.com/photos/861443/pexels-photo-861443.jpeg";
-
-    this.dv.viewDocument(
-      this.imgUrl,
-      "image",
-      options,
-      () => {},
-      () => {},
-      () => {},
-      error => {
-        console.log(error);
-        let alert3 = this.alertController.create({
-          title: "OpenImg Error:",
-          message: JSON.stringify(error),
-          buttons: ["OK"]
-        });
-        alert3.present();
-      }
-    );
-  }
 
   Openpdf() {
-    console.log(this.imgUrl);
     const options: DocumentViewerOptions = {
       title: "My PDF"
     };
@@ -177,4 +208,6 @@
         alert3.present();
       }
     );
+  }
+  
   }
