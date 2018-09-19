@@ -86,6 +86,11 @@ export class DownloadPage {
               // by adding <allow-navigation href="file:///*" /> in config.xml
               //https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist/     
               
+              
+              
+           WARN: normalizeURL is deprecated, use window.Ionic.WebView.convertFileSrc
+           sol:https://beta.ionicframework.com/docs/native/ionic-webview/
+
               */ 
               
           this.imgUrl = normalizeURL( entry.toURL());
