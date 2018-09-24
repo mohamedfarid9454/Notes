@@ -1,0 +1,54 @@
+1.css3_gradients:
+https://www.w3schools.com/css/css3_gradients.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+for all browsers : https://webkit.org/blog/1424/css3-gradients/ 
+
+**********************************************
+
+
+2.Colors From Image
+
+https://html-color-codes.info/colors-from-image/
+
+**********************************************
+
+
+3.Online Css Generator
+https://www.bestcssbuttongenerator.com/   
+http://cssbuttoncreator.com/
+
+**********************************************
+
+
+4.How to disable all div content
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+**********************************************
+
+
+5.Custom Font Usage
+
+https://forum.ionicframework.com/t/custom-font-usage/4270/2
+
+https://www.w3schools.com/css/css3_fonts.asp
+
+**********************************************
+
+6.inline and inline-block :
+inline-block like inline but can take width height
+https://stackoverflow.com/questions/8969381/what-is-the-difference-between-display-inline-and-display-inline-block
+
+**********************************************
+
+7.make button above image:
+<div style="position:relative;display:inline-block">
+   <img>
+   <button style="position:absolute;top:;left:">
+ </div>
+ 
+
+**********************************************
