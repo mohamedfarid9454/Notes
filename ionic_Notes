@@ -22,3 +22,9 @@ https://ionicframework.com/docs/native/zip/
 
 3.Storage :
 https://ionicframework.com/docs/storage/
+
+*****************************************************************************************************
+Text Link :
+https://stackoverflow.com/questions/40245847/how-to-go-to-another-page-with-a-button-click-with-ionic
+ <ion-label  [navPush]="anOtherPage">Go an Other Page</ion-label>
+
