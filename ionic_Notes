@@ -1,3 +1,6 @@
+*********************************
+Try your app online : https://appetize.io/upload
+*********************************
 1.Upload Download Files:
 Main Plugin : ionic cordova plugin add cordova-plugin-file-transfer
 compination file to our app and  specify location : ionic cordova plugin add cordova-plugin-file 
