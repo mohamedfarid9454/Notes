@@ -211,6 +211,37 @@ http://training.fabiobiondi.io/2017/07/10/create-an-accordion-component-in-angul
 
 https://stackoverflow.com/questions/45512475/angular4-cant-find-jquery-ui-functions
 https://medium.com/@swarnakishore/how-to-include-and-use-jquery-in-angular-cli-project-592e0fe63176
+
+Ex:
+import { Component, OnInit, OnChanges } from '@angular/core';
+// import * as $ from 'jquery';
+declare var $: any;
+
+@Component({
+  selector: 'app-drag-anddrop',
+  templateUrl: './drag-anddrop.component.html',
+  styleUrls: ['./drag-anddrop.component.scss']
+})
+export class DragAnddropComponent implements OnInit, OnChanges {
+
+
+  constructor() { }
+
+  ngOnInit() {
+    $('.draggable').draggable();
+
+
+  }
+
+  ngOnChanges() {
+  }
+
+}
+
+and in angular.json :
+ "node_modules/jquery/dist/jquery.min.js",
+ "node_modules/jquery-ui-dist/jquery-ui.min.js"
+
 *******************************************************************************************
 22.Drag Drop Library Ex:
  https://github.com/jsplumb/jsplumb/
