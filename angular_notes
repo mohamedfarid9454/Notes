@@ -251,6 +251,9 @@ http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
 *********************************************************************************************
 23. Excel in Angular
 https://www.grapecity.com/en/blogs/how-to-import-and-export-excel-spreadsheets-in-angular
+
+or 
+https://stackblitz.com/edit/angular6-export-xlsx?file=src%2Fapp%2Fapp.component.ts
 *************************************************************************************************
 24. Authentication Guard 
 https://angular.io/guide/router  see ex : https://stackblitz.com/angular/ngvqdomokvm?file=src%2Fapp%2Fauth%2Flogin%2Flogin.component.ts
