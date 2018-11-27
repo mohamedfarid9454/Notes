@@ -244,10 +244,14 @@ and in angular.json :
  "node_modules/jquery-ui-dist/jquery-ui.min.js"
 
 *******************************************************************************************
-22.Drag Drop Library Ex:
+22.Drag Drop Library Ex: (jsPlumb)
  https://github.com/jsplumb/jsplumb/
  https://github.com/jsplumb/katavorio
+ for Events :
+https://jsplumbtoolkit.com/community/doc/events.html
 http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
+
+
 *********************************************************************************************
 23. Excel in Angular
 https://www.grapecity.com/en/blogs/how-to-import-and-export-excel-spreadsheets-in-angular
