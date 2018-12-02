@@ -249,14 +249,7 @@ export class DragAnddropComponent implements OnInit, OnChanges {
     $('.draggable').draggable();
     $('#diagramContainer').css('position', 'relative');
     
-/*using JSPlumb
-
- https://github.com/jsplumb/jsplumb/
- https://github.com/jsplumb/katavorio
- for Events :
-https://jsplumbtoolkit.com/community/doc/events.html
-http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
-*/
+/*using JSPlump*/
 //events
    jsPlumb.bind('dblclick', function(conn) {
       console.log('connection when dbclick is ');
