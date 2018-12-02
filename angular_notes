@@ -211,11 +211,26 @@ http://training.fabiobiondi.io/2017/07/10/create-an-accordion-component-in-angul
 
 https://stackoverflow.com/questions/45512475/angular4-cant-find-jquery-ui-functions
 https://medium.com/@swarnakishore/how-to-include-and-use-jquery-in-angular-cli-project-592e0fe63176
+
+22. Add jsPlumb to Angular 6
+
+ https://github.com/jsplumb/jsplumb/
+ https://github.com/jsplumb/katavorio
+ for Events :
+https://jsplumbtoolkit.com/community/doc/events.html
+http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
+
+
+and in angular.json :
+ "node_modules/jquery/dist/jquery.min.js",
+ "node_modules/jquery-ui-dist/jquery-ui.min.js",
+ "node_modules/jsplumb/dist/js/jsplumb.min.js",
+ 
 Ex1:
 https://stackoverflow.com/questions/43934727/how-to-use-jquery-plugin-with-angular-4
 Ex2:
 import { Component, OnInit, OnChanges } from '@angular/core';
-// import * as $ from 'jquery';
+declare var jsPlumb: any;
 declare var $: any;
 
 @Component({
@@ -229,27 +244,70 @@ export class DragAnddropComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
+  //using JQuery
     $('.draggable').draggable();
+    $('#diagramContainer').css('position', 'relative');
+    
+/*using JSPlumb
 
+ https://github.com/jsplumb/jsplumb/
+ https://github.com/jsplumb/katavorio
+ for Events :
+https://jsplumbtoolkit.com/community/doc/events.html
+http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
+*/
+//events
+   jsPlumb.bind('dbclick', function(conn) {
+      console.log('connection when dbclick is ');
+      console.log(conn);
+      jsPlumb.deleteConnection(conn);
 
+  });
+  
+    jsPlumb.bind('connection', function (info) { console.log('Info about connection :'); console.log(info); });
+
+//End Points
+const _common = {
+            isSource: true,
+            isTarget: true,
+            connector: 'Straight',
+            endpoint: ['Rectangle', { radius: 30 }],
+            maxConnections: -1, // -1 means that the Endpoint has no maximum limit of Connections:
+            paintStyle: { fill: 'white', outlineStroke: 'blue', strokeWidth: 3 },
+            hoverPaintStyle: { outlineStroke: 'lightblue' },
+            connectorStyle: { outlineStroke: 'green', strokeWidth: 1 },
+            connectorHoverStyle: { strokeWidth: 2 },
+            cssClass: 'jtk-endpoint',
+            ConnectionsDetachable: true
+
+          };
+          
+jsPlumb.draggable('myDiv');
+  const bottomEndPoint = jsPlumb.addEndpoint('myDiv', {
+            anchor: 'Bottom'
+          }, _common);
+
+          bottomEndPoint.bind('dblclick', function (endpoint) {
+            console.log('endPoint is :'); console.log(endpoint);
+            console.log('connections :'); console.log(endpoint.connections);
+            console.log(endpoint.elementId);
+
+          });
+          
+  const topEndPoint = jsPlumb.addEndpoint('myDiv', {
+              anchor: 'Top'
+            }, _common);
+            topEndPoint.bind('dblclick', function (endpoint) {
+              console.log('endPoint is :'); console.log(endpoint);
+              console.log('connections :'); console.log(endpoint.connections);
+            });
+  
   }
 
   ngOnChanges() {
   }
 
 }
-
-and in angular.json :
- "node_modules/jquery/dist/jquery.min.js",
- "node_modules/jquery-ui-dist/jquery-ui.min.js"
-
-*******************************************************************************************
-22.Drag Drop Library Ex: (jsPlumb)
- https://github.com/jsplumb/jsplumb/
- https://github.com/jsplumb/katavorio
- for Events :
-https://jsplumbtoolkit.com/community/doc/events.html
-http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
 
 
 *********************************************************************************************
