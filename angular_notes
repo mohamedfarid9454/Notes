@@ -220,6 +220,7 @@ https://medium.com/@swarnakishore/how-to-include-and-use-jquery-in-angular-cli-p
 https://jsplumbtoolkit.com/community/doc/events.html
 http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
 
+npm install jquery jquey-ui jsplumb
 
 and in angular.json :
  "node_modules/jquery/dist/jquery.min.js",
@@ -257,7 +258,7 @@ https://jsplumbtoolkit.com/community/doc/events.html
 http://www.freedevelopertutorials.com/jsplumb-tutorial/endpoints/
 */
 //events
-   jsPlumb.bind('dbclick', function(conn) {
+   jsPlumb.bind('dblclick', function(conn) {
       console.log('connection when dbclick is ');
       console.log(conn);
       jsPlumb.deleteConnection(conn);
