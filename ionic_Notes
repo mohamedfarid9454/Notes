@@ -31,3 +31,7 @@ Text Link :
 https://stackoverflow.com/questions/40245847/how-to-go-to-another-page-with-a-button-click-with-ionic
  <ion-label  [navPush]="anOtherPage">Go an Other Page</ion-label>
 
+***********************************************************************************************
+
+4.open pdf another way
+https://www.brainfever.co.uk/2018/02/13/viewing-local-pdfs-in-ionic-on-browser-ios-and-android-5/
