@@ -39,4 +39,14 @@ https://www.brainfever.co.uk/2018/02/13/viewing-local-pdfs-in-ionic-on-browser-i
 *************************************************************************************************
 5.ionic 4 vs ionic 3 and how to upgrade
 https://ionicthemes.com/tutorials/about/ionic-4-vs-ionic-3
+******************************************************************************************
+6.Display string in ion-datetime
+in html
+<ion-datetime displayFormat="MMMM YYYY" min="2000" max="2019-12-31" [(ngModel)]="visitDate">
+         </ion-datetime>
 
+
+in constructor
+visitDate = new Date(this.visit.visitDate).toISOString();
+
+https://stackoverflow.com/questions/45263121/ionic-2-datetime-display-current-date-to-future-date-and-focused-on-todays-date
