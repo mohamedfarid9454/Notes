@@ -89,6 +89,7 @@ in html:
         <p class="validator-error"> Passwords do not match
         </p>
       </ion-item>
+//credentialsForm.controls.password.hasError('notSame')
       
 </form>
 </ion-list>
