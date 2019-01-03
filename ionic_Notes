@@ -74,5 +74,8 @@ https://ionicframework.com/docs/cli/cordova/run/
 ex:
 https://www.youtube.com/watch?v=XEeWFIsgtsU
 https://ionicframework.com/docs/developer-resources/developer-tips/
-
-
+************************************************************************************
+10.open whats app
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+in constructor(private iab: InAppBrowser){}
+openWhatsUp() {this.iab.create("https://api.whatsapp.com/send?phone=+201112858168","_system" );}
