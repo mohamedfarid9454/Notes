@@ -60,3 +60,15 @@ https://stackoverflow.com/questions/39705491/error-source-path-does-not-exist-re
 
 8.Signature
 https://devdactic.com/signature-drawpad-ionic-2/ 
+******************************************************************************
+9.run android:
+ionic resources
+ionic cordova platform add android
+ionic cordova  build android --prod
+ionic cordova  run android
+
+Debug on Chrome:
+ionic cordova  build android --prod
+https://www.youtube.com/watch?v=XEeWFIsgtsU
+
+
