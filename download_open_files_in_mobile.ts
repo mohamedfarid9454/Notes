@@ -18,7 +18,6 @@ import {IonicPage,NavController,NavParams,Platform, normalizeURL,AlertController
 import { FileTransfer, FileTransferObject } from "@ionic-native/file-transfer";
 import { File } from "@ionic-native/file";
 import {DocumentViewer, DocumentViewerOptions} from "@ionic-native/document-viewer";
-
 @IonicPage()
 @Component({
   selector: "page-download",
@@ -220,8 +219,69 @@ export class DownloadPage {
     );
   }
   
-  }
+  
 
+
+  openPDFAssets(name: string) {
+        console.log('open-pdf', name);
+        const options: DocumentViewerOptions = {
+            title: "My PDF"
+        };
+
+        let path = null;
+        if (this.platform.is('ios')) {
+            path = this.file.documentsDirectory;
+            this.documentViewer.viewDocument(
+                "assets/pdf/" + name + ".pdf",
+                "application/pdf",
+                options,
+                result => {
+                }, //onShow
+                close => {
+                }, //onClose
+                missing => {
+                }, //onMissingApp
+                error => {
+                    console.log(error);
+                    let alert = this.alertController.create({
+                        title: "Openpdf Error:",
+                        subTitle: path,
+                        message: JSON.stringify(error),
+                        buttons: ["OK"]
+                    });
+                    alert.present();
+                }
+            );
+        } else {
+            console.log('its android plattofrm');
+            this.openDocumentAssets(name + ".pdf");
+        }
+    }
+
+    openDocumentAssets(fileName) {
+        let assetDirectory = 'assets/pdf/';
+        console.log(assetDirectory);
+        // normal link for browser
+        if (!this.platform.is('cordova') && !this.platform.is('android')) {
+            console.log('browser');
+            window.open(assetDirectory + fileName);
+            return;
+        } else {
+            console.log('not browser ');
+            let filePath = this.file.applicationDirectory + 'www/' + assetDirectory;
+
+            if (this.platform.is('android')) {
+                console.log('in android');
+                let theMove = this.file.copyFile(filePath, fileName, this.file.externalDataDirectory, fileName);
+                filePath = this.file.externalDataDirectory;
+                console.log('new-filePath', filePath + fileName);
+                const browser = this.iab.create(normalizeURL(filePath + fileName), '_system', 'location=yes');
+                console.log(browser);
+            }
+        }
+    }
+
+}
 
     /*console.log("location.href:");
     console.log(location.href);//http://localhost:8080/index.html#/login
@@ -234,3 +294,5 @@ export class DownloadPage {
     console.log(this.file.applicationDirectory);//file:///Users/User_Name/Library/Developer/CoreSimulator/Devices/1CD9BF48-CA54-4939-BD44-5E2050FF3DA2/data/Containers/Bundle/Application/06F81FB5-9FFF-42A6-A373-D5E5BE4CD41C/NBPTouch.app/
     console.log(this.file.applicationStorageDirectory);//file:///Users/User_Name/Library/Developer/CoreSimulator/Devices/1CD9BF48-CA54-4939-BD44-5E2050FF3DA2/data/Containers/Data/Application/3B7B4B02-B11F-42A1-89C4-1DE609CF9F3E/
   */
+
+
