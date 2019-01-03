@@ -70,5 +70,6 @@ ionic cordova  run android
 Debug on Chrome:
 ionic cordova  build android --prod
 https://www.youtube.com/watch?v=XEeWFIsgtsU
+https://ionicframework.com/docs/developer-resources/developer-tips/
 
 
