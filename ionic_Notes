@@ -79,3 +79,8 @@ https://ionicframework.com/docs/developer-resources/developer-tips/
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 in constructor(private iab: InAppBrowser){}
 openWhatsUp() {this.iab.create("https://api.whatsapp.com/send?phone=+201112858168","_system" );}
+
+
+***************************************************************************************
+11.Loading Controller
+https://ionicframework.com/docs/api/components/loading/LoadingController
