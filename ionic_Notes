@@ -84,3 +84,7 @@ openWhatsUp() {this.iab.create("https://api.whatsapp.com/send?phone=+20111285816
 ***************************************************************************************
 11.Loading Controller
 https://ionicframework.com/docs/api/components/loading/LoadingController
+
+***************************************************************************************
+12:Refresh Page:
+https://stackoverflow.com/questions/50115582/how-to-refresh-a-page-on-ionic-3-ionic-angular-5
