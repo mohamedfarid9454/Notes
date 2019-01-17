@@ -90,13 +90,16 @@ https://ionicframework.com/docs/api/components/loading/LoadingController
 https://stackoverflow.com/questions/50115582/how-to-refresh-a-page-on-ionic-3-ionic-angular-5
 ****************************************************************************
 13.change language:
-https://ionicframework.com/docs/developer-resources/ng2-translate/
+A. https://ionicframework.com/docs/developer-resources/ng2-translate/
 https://stackoverflow.com/questions/42387558/change-language-on-ionic2-what-is-the-most-effective-way-to-change-all-page-la
 
 translate from translate service
 onChange(e) {
     this.translate.use(e);
 }
+
+
+B.https://ionicframework.com/docs/theming/rtl-support/
 **********************************************************************************************
 14.Convert json to table online
 http://json2table.com/
