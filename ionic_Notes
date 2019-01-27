@@ -110,3 +110,6 @@ https://github.com/mohammedzaki/CureTemperature-Mobile-App
 **********************************************************************************
 16.change back button settings
 https://ionicframework.com/docs/v3/api/config/Config/
+console.log(this.config.get('backButtonText'));
+
+**********************************************************************************
