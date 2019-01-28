@@ -113,3 +113,5 @@ https://ionicframework.com/docs/v3/api/config/Config/
 console.log(this.config.get('backButtonText'));
 
 **********************************************************************************
+17. set max,min date
+https://stackoverflow.com/questions/43366754/angular-2-ionic-2-how-to-set-max-or-min-date-to-today-for-date-input
