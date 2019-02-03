@@ -327,5 +327,9 @@ or
 3. https://nehalist.io/uploading-files-in-angular2/
 or
 4. https://valor-software.com/ng2-file-upload/
+*****************************************************************************************************
 
 
+.Shadow Dom : Don't  Rerender all the Dom just the part that want to change(React).
+ Virtual Dom : Encapsulate complex elements in one element(Angular) ex:<body><my-app></my-app> or <date-picker></date-picker> 
+https://stackoverflow.com/questions/36012239/is-shadow-dom-fast-like-virtual-dom-in-react-js
