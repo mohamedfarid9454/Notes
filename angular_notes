@@ -330,7 +330,11 @@ or
 *****************************************************************************************************
 
 
-.Virtual Dom : Don't  Rerender all the Dom just the part that want to change(React).
+26.Virtual Dom : Don't  Rerender all the Dom just the part that want to change(React).
  Shadow Dom : Encapsulate complex elements in one element(Angular) or allows the encapsulation of smaller DOM elements and CSS styles into a single DOM element
  ex:<body><my-app></my-app> or <date-picker></date-picker> 
 https://stackoverflow.com/questions/36012239/is-shadow-dom-fast-like-virtual-dom-in-react-js
+
+*******************************************************************************
+27.
+https://stackoverflow.com/questions/45329307/how-to-add-a-background-image-in-angular-2-component
