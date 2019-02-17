@@ -118,3 +118,7 @@ https://stackoverflow.com/questions/43366754/angular-2-ionic-2-how-to-set-max-or
 ****************************
 18.disable-same-origin-policy
 https://www.thegeekstuff.com/2016/09/disable-same-origin-policy/
+*********************************************************************
+19.Clone Object
+  this.items = JSON.parse(JSON.stringify(result.returnObject));
+
