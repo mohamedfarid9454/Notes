@@ -122,3 +122,7 @@ https://www.thegeekstuff.com/2016/09/disable-same-origin-policy/
 19.Clone Object
   this.items = JSON.parse(JSON.stringify(result.returnObject));
 
+*********************************************************************
+20.GoogleMaps
+https://developers.google.com/maps/documentation/javascript/events
+
