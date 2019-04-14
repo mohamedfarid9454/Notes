@@ -141,3 +141,7 @@ https://www.thegeekstuff.com/2016/09/disable-same-origin-policy/
 ********************************************************************
 23. Error: Cannot determine the module for class OverlayPortal in --prod
     "@angular/compiler-cli": "5.2.7",
+
+***************************************************************
+24.alert-controller-input-box-validation
+https://stackoverflow.com/questions/45969821/alert-controller-input-box-validation
