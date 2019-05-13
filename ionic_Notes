@@ -162,3 +162,15 @@ https://stackoverflow.com/questions/47573797/dynamically-addcontrol-to-formgroup
 **************************************************************************
 28.Get Distinct Value from array has objects
 https://codeburst.io/javascript-array-distinct-5edc93501dc4
+
+or
+https://stackblitz.com/edit/typescript-distinct-array
+ex:
+let bills = [
+            { date: '2018-01-20', amount: '220', category: 'Electricity' },
+            { date: '2018-01-20', amount: '20', category: 'Gas' },
+            { date: '2018-02-20', amount: '120', category: 'Electricity' }
+        ]
+bills.filter((b,i,arr)=>{
+return arr.indexOf(arr.find(a=>a.category===b.category))===i
+});
