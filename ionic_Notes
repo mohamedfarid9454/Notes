@@ -171,6 +171,6 @@ let bills = [
             { date: '2018-01-20', amount: '20', category: 'Gas' },
             { date: '2018-02-20', amount: '120', category: 'Electricity' }
         ]
-bills.filter((b,i,arr)=>{
+bills.filter = bills.filter((b,i,arr)=>{
 return arr.indexOf(arr.find(a=>a.category===b.category))===i
 });
