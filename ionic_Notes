@@ -199,3 +199,8 @@ getIcon(): SafeUrl {
    return this.domSanitizer.bypassSecurityTrustUrl(`${this.preImgUrl}myData/icon.png`);
  }
 https://angular.io/api/platform-browser/DomSanitizer
+*********************************************************************************
+31.
+changes in ionic 4
+https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#back-button
+
