@@ -174,3 +174,28 @@ let bills = [
 bills.filter = bills.filter((b,i,arr)=>{
 return arr.indexOf(arr.find(a=>a.category===b.category))===i
 });
+
+****************************************************************************
+29.
+// Check Directory
+         // this.file.checkDir(path, 'areas');
+
+         // list directory in android
+         // this.file.listDir(path, 'areas');
+
+         // list directory in ios
+         // this.file.listDir(path + 'areas/1', '');
+ *****************************************************************************
+ 30.
+ Download image and display it on ios :
+
+1.file transfer Download(note path changed every time on ios)
+2.normalize url : this.webview.convertFileSrc(path)
+3. display img:
+
+in html:<img [src]="getIcon()" >
+in ts :
+getIcon(): SafeUrl {
+   return this.domSanitizer.bypassSecurityTrustUrl(`${this.preImgUrl}myData/icon.png`);
+ }
+https://angular.io/api/platform-browser/DomSanitizer
